@@ -1,8 +1,8 @@
 # Dev-Ops-assignment
 
-# run init script in bash 
+## run init script in bash 
 
-# get minikube IP and open port 32322
+## get minikube IP and open port 32322
 
 # once running then proceed to the following commands  
 
