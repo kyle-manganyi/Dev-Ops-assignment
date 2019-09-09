@@ -7,11 +7,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: service_demo_pod
+      app: front-end
   template:
     metadata:
       labels:
-        app: service_demo_pod
+        app: front-end
     spec:
       containers:
       - name: simple-http
