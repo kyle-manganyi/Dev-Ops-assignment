@@ -1,11 +1,10 @@
 ---
-kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: v1
+kind: Pod
 metadata:
-  name: service-demo
+  name: back-end
   namespace: temp
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: service_demo_pod
@@ -31,7 +30,7 @@ metadata:
   namespace: temp
 spec:
   selector:
-    app: service_demo_pod
+    app: front-end
   ports:
   - protocol: TCP
     port: 80
@@ -42,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: service
+  name: front-end
   namespace: temp
 spec:
   restartPolicy: Never
