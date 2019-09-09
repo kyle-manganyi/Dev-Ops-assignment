@@ -44,9 +44,23 @@ metadata:
   name: front-end
   namespace: temp
 spec:
-  restartPolicy: Never
   containers:
   - name: demo-client2
     image: alpine
     command: ["/bin/sh"]
     args: ["-c", "echo 'GET / HTTP/1.1\r\n\r\n' | nc service-demo 80"]
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: test
+spec:
+  selector:
+    matchLabels:
+      app: test
+  namespaceSelector:
+    matchNames:
+    - temp
+  endpoints:
+  - port: http
+    interval: 30s
