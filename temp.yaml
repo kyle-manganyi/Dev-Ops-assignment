@@ -1,17 +1,17 @@
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: back-end
   namespace: temp
 spec:
   selector:
     matchLabels:
-      app: front-end
+      app: back-end
   template:
     metadata:
       labels:
-        app: front-end
+        app: back-end
     spec:
       containers:
       - name: simple-http
